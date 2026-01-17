@@ -1,0 +1,48 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "npx ultracite lint",
+    "format": "npx ultracite fix",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm run lint && pnpm run typecheck"
+  },
+  "dependencies": {
+    "@sanity/asset-utils": "^2.3.0",
+    "@sanity/client": "catalog:",
+    "@sanity/image-url": "^2.0.2",
+    "@sanity/visual-editing": "^4.0.2",
+    "@tanstack/react-query": "^5.90.12",
+    "@workspace/env": "workspace:*",
+    "@workspace/logger": "workspace:*",
+    "@workspace/ui": "workspace:*",
+    "babel-plugin-react-compiler": "19.1.0-rc.2",
+    "fuse.js": "^7.1.0",
+    "lenis": "^1.3.17",
+    "lucide-react": "catalog:",
+    "motion": "^12.26.2",
+    "next": "16.0.10",
+    "next-sanity": "^11.6.10",
+    "next-themes": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "sanity-image": "^1.0.0",
+    "schema-dts": "^1.1.5",
+    "server-only": "^0.0.1",
+    "slugify": "^1.6.6",
+    "swr": "^2.3.7",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@workspace/typescript-config": "workspace:*",
+    "baseline-browser-mapping": "^2.9.5"
+  }
+}

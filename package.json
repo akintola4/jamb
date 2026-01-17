@@ -1,0 +1,31 @@
+{
+  "name": "jamb",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "build:studio": "turbo run build --filter=studio",
+    "build:web": "turbo run build --filter=web",
+    "dev": "turbo dev",
+    "dev:studio": "turbo run dev --filter=studio",
+    "dev:web": "turbo run dev --filter=web",
+    "lint": "npx ultracite check",
+    "format": "npx ultracite fix",
+    "check-types": "turbo check-types",
+    "check-biome": "turbo check-biome"
+  },
+  "dependencies": {
+    "@workspace/env": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.8",
+    "@workspace/typescript-config": "workspace:*",
+    "turbo": "^2.6.3",
+    "typescript": "catalog:",
+    "ultracite": "5.6.2"
+  },
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": ">=22"
+  }
+}
