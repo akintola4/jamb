@@ -181,7 +181,7 @@ export function PageBuilder({
     //react lenis for that premium scroll experience
     <ReactLenis root>
       <main
-        className="mx-auto bg-stone-100 flex flex-col"
+        className="mx-auto bg-stone-100 dark:bg-background flex flex-col"
         data-sanity={containerDataAttribute}
       >
         {blocks.map(renderBlock)}
