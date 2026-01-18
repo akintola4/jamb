@@ -62,6 +62,22 @@ This project has been enhanced with a focus on luxury aesthetics, premium perfor
 - **Structured Data**: Integrated `JSON-LD` for Organization and Website schemas.
 - **Accessibility**: Semantic HTML5 structure and ARIA-compliant components.
 
+## 📈 Performance & LCP Validation
+
+To ensure the "premium performance" requirement was met, the application was benchmarked for Largest Contentful Paint (LCP) and overall Core Web Vitals.
+
+### Vercel / Production Test Results
+
+<!-- Replace the placeholder below with your Vercel performance screenshot -->
+
+![Vercel LCP Test Result](https://via.placeholder.com/1200x600?text=Vercel+Performance+Test+Result)
+
+### Local / Lighthouse Test Results
+
+<!-- Replace the placeholder below with your local Lighthouse/Performance screenshot -->
+
+![Local LCP Test Result](https://via.placeholder.com/1200x600?text=Local+Lighthouse+Test+Result)
+
 ### 🛠️ Technical Decisions
 
 - **Scalability**: Used Tailwind CSS with a standardized design system for visual cohesiveness.
