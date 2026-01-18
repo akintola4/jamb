@@ -67,7 +67,7 @@ export function HeroBlock({
         {image && (
           <div className="h-full w-full overflow-hidden">
             <SanityImage
-              className="h-full w-full object-cover lg:aspect-auto aspect-video"
+              className="h-full w-full object-fill aspect-square lg:aspect-auto"
               fetchPriority="high"
               height={1080}
               sizes="100vw"
