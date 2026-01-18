@@ -33,7 +33,7 @@ export function Service({
   return (
     <section
       className={cn(
-        "px-4 py-16 md:py-24 transition-colors duration-300",
+        "px-4 py-2 md:py-16 transition-colors duration-300",
         bgColor,
         "dark:bg-background"
       )}
@@ -77,6 +77,7 @@ export function Service({
               <SanityImage
                 loading="eager"
                 fetchPriority="high"
+                className="object-cover"
                 width={550}
                 height={550}
                 image={image}

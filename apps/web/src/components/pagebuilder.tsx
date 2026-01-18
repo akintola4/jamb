@@ -2,17 +2,19 @@
 
 import { useOptimistic } from "@sanity/visual-editing/react";
 import { env } from "@workspace/env/client";
+import { ReactLenis } from "lenis/react";
 import { createDataAttribute } from "next-sanity";
 import { useCallback, useMemo } from "react";
-import { ReactLenis } from "lenis/react";
+
 import type { QueryHomePageDataResult } from "@/lib/sanity/sanity.types";
 import type { PageBuilderBlockTypes } from "@/types";
+import { CategoriesSection } from "./sections/categories";
 import { CTABlock } from "./sections/cta";
 import { FaqAccordion } from "./sections/faq-accordion";
 import { FeatureCardsWithIcon } from "./sections/feature-cards-with-icon";
+import { FeaturedProducts } from "./sections/featured-products";
 import { HeroBlock } from "./sections/hero";
 import { ImageLinkCards } from "./sections/image-link-cards";
-import { FeaturedProducts } from "./sections/featured-products";
 import { Service } from "./sections/service";
 import { SubscribeNewsletter } from "./sections/subscribe-newsletter";
 
@@ -43,8 +45,12 @@ const BLOCK_COMPONENTS = {
   service: Service,
   featuredProducts: FeaturedProducts,
   imageLinkCards: ImageLinkCards,
+  categoriesSection: CategoriesSection,
   // biome-ignore lint/suspicious/noExplicitAny: <any is used to allow for dynamic component rendering>
-} as const satisfies Record<PageBuilderBlockTypes | "service" | "featuredProducts", React.ComponentType<any>>;
+} as const satisfies Record<
+  PageBuilderBlockTypes | "service" | "featuredProducts" | "categoriesSection",
+  React.ComponentType<any>
+>;
 
 /**
  * Helper function to create consistent Sanity data attributes
@@ -92,7 +98,7 @@ function UnknownBlockError({
  */
 function useOptimisticPageBuilder(
   initialBlocks: PageBuilderBlock[],
-  documentId: string,
+  documentId: string
 ) {
   // biome-ignore lint/suspicious/noExplicitAny: <any is used to allow for dynamic component rendering>
   return useOptimistic<PageBuilderBlock[], any>(
@@ -102,7 +108,7 @@ function useOptimisticPageBuilder(
         return action.document.pageBuilder;
       }
       return currentBlocks;
-    },
+    }
   );
 }
 
@@ -117,7 +123,7 @@ function useBlockRenderer(id: string, type: string) {
         type,
         path: `pageBuilder[_key=="${blockKey}"]`,
       }),
-    [id, type],
+    [id, type]
   );
 
   const renderBlock = useCallback(
@@ -145,7 +151,7 @@ function useBlockRenderer(id: string, type: string) {
         </div>
       );
     },
-    [createBlockDataAttribute],
+    [createBlockDataAttribute]
   );
 
   return { renderBlock };
@@ -164,7 +170,7 @@ export function PageBuilder({
 
   const containerDataAttribute = useMemo(
     () => createSanityDataAttribute({ id, type, path: "pageBuilder" }),
-    [id, type],
+    [id, type]
   );
 
   if (!blocks.length) {
@@ -172,15 +178,14 @@ export function PageBuilder({
   }
 
   return (
-
     //react lenis for that premium scroll experience
-     <ReactLenis root>
-    <main
-      className="mx-auto flex flex-col"
-      data-sanity={containerDataAttribute}
-    >
-      {blocks.map(renderBlock)}
-    </main>
-     </ReactLenis>
+    <ReactLenis root>
+      <main
+        className="mx-auto bg-stone-100 flex flex-col"
+        data-sanity={containerDataAttribute}
+      >
+        {blocks.map(renderBlock)}
+      </main>
+    </ReactLenis>
   );
 }

@@ -1,7 +1,9 @@
 import { cn } from "@workspace/ui/lib/utils";
+import { motion } from "motion/react";
 import Link from "next/link";
 
-import type { PagebuilderType, SanityImageProps } from "@/types";
+import { FADE_IN_VARIANTS, STAGGER_CONTAINER } from "@/lib/motion";
+import type { SanityImageProps } from "@/types";
 import { SanityImage } from "../elements/sanity-image";
 
 type ProductLink = {
@@ -34,17 +36,27 @@ export function FeaturedProducts({
 
   return (
     <section
-      className="bg-neutral-200 py-8 md:py-12 dark:bg-zinc-900"
+      className="bg-neutral-200 py-16 md:py-24 dark:bg-zinc-900"
       id="featured-products"
     >
       <div className="container mx-auto px-4 md:px-6">
         {heading && (
-          <h2 className="mb-12 text-center  text-3xl leading-tight text-neutral-900 md:text-4xl lg:text-4xl dark:text-neutral-100 ">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={FADE_IN_VARIANTS}
+            className="mb-12 text-center text-3xl leading-tight text-neutral-900 md:text-4xl lg:text-4xl dark:text-neutral-100"
+          >
             {heading}
-          </h2>
+          </motion.h2>
         )}
 
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-15%" }}
+          variants={STAGGER_CONTAINER}
           className={cn(
             "grid grid-cols-1 gap-8 sm:grid-cols-2 items-center lg:gap-6",
             products?.length === 1 && "lg:grid-cols-1 max-w-md mx-auto",
@@ -55,50 +67,55 @@ export function FeaturedProducts({
           )}
         >
           {products?.map((product, index) => {
-            const nativeAspect = product?.image?.dimensions?.aspectRatio;
+            const nativeAspect = product.image?.dimensions?.aspectRatio;
             const dynamicStyle =
               aspectRatio === "auto" && nativeAspect
                 ? { aspectRatio: nativeAspect }
                 : {};
 
             return (
-              <Link
-                href={`/product/${product?.slug}`}
-                key={`${product?._id}-${index}`}
-                className="group flex flex-col items-center w-full"
+              <motion.div
+                key={`${product._id}-${index}`}
+                variants={FADE_IN_VARIANTS}
               >
-                <div
-                  className={cn(
-                    "relative mb-6 w-full overflow-hidden rounded-sm bg-stone-900",
-                    aspectRatio !== "auto" && aspectClass
-                  )}
-                  style={dynamicStyle}
+                <Link
+                  href={`/product/${product.slug}`}
+                  className="group flex flex-col items-center w-full"
                 >
-                  {product?.image && (
-                    <SanityImage
-                      fetchPriority="high"
-                      loading="eager"
-                      width={550}
-                      height={550}
-                      className="h-full w-full object-cover  transition-transform duration-500 group-hover:scale-110"
-                      image={product.image}
-                    />
-                  )}
-                </div>
-                <div className="text-center">
-                  <h3 className="mb-1 text-lg font-medium text-neutral-900 dark:text-neutral-100">
-                    {product?.title}
-                  </h3>
-                  {product?.subtitle && (
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                      {product?.subtitle}
-                    </p>
-                  )}
-                </div>
-              </Link>
+                  <div
+
+                    className={cn(
+                      "relative mb-6 w-full overflow-hidden bg-stone-900 ",
+                      aspectRatio !== "auto" && aspectClass
+                    )}
+                    style={dynamicStyle}
+                  >
+                    {product?.image && (
+                      <SanityImage
+                        fetchPriority="high"
+                        loading="eager"
+                        width={1000}
+                        height={700}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        image={product.image}
+                      />
+                    )}
+                  </div>
+                  <div className="text-center">
+                    <h3 className="mb-1 text-lg font-medium text-neutral-900 dark:text-neutral-100">
+                      {product?.title}
+                    </h3>
+                    {product?.subtitle && (
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400 font-light">
+                        {product?.subtitle}
+                      </p>
+                    )}
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

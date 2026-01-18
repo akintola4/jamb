@@ -132,11 +132,12 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  /* had to comment this out it was focing img to have a round shape but the figma didn't need that  */
+  /* border-radius: var(--radius-md); */
 }
 
-
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 

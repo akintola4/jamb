@@ -26,8 +26,8 @@ export const STAGGER_CONTAINER = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Tighter stagger for a more unified sequence
-      delayChildren: 0.1,
+      staggerChildren: 0.15, // Tighter stagger for a more unified sequence
+      delayChildren: 0.25,
     },
   },
 };

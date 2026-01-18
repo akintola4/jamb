@@ -231,6 +231,23 @@ const featuredProductsBlock = /* groq */ `
   }
 `;
 
+const categoriesSectionBlock = /* groq */ `
+  _type == "categoriesSection" => {
+    ...,
+    "categories": select(
+      count(categories) > 0 => categories[]->{
+        title,
+        "slug": slug.current
+      },
+      *[_type == "category"]{
+        title,
+        "slug": slug.current
+      }
+    ),
+    includeJournal
+  }
+`;
+
 const pageBuilderFragment = /* groq */ `
   pageBuilder[]{
     ...,
@@ -242,7 +259,8 @@ const pageBuilderFragment = /* groq */ `
     ${subscribeNewsletterBlock},
     ${serviceBlock},
     ${featuredProductsBlock},
-    ${imageLinkCardsBlock}
+    ${imageLinkCardsBlock},
+    ${categoriesSectionBlock}
   }
 `;
 
