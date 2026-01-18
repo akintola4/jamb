@@ -15,7 +15,7 @@ export const CategoriesSection = ({
   const items = [...categories];
 
   return (
-    <section className="py-2 md:py-6 bg-stone-100 border-b border-gray-100">
+    <section className="py-2 md:py-6 bg-stone-100 dark:bg-background ">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 text-md md:text-lg text-neutral-500 dark:text-neutral-400">
           {items.map((item, index) => (

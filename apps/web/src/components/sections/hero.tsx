@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 
 import {
   FADE_IN_VARIANTS,
-  SCALE_UP_VARIANTS,
   STAGGER_CONTAINER,
 } from "@/lib/motion";
 import type { PagebuilderType } from "@/types";
@@ -66,21 +65,17 @@ export function HeroBlock({
         </motion.div>
 
         {image && (
-          <motion.div
-            className="h-full w-full overflow-hidden"
-            initial="hidden"
-            animate="visible"
-            variants={SCALE_UP_VARIANTS}
-          >
+          <div className="h-full w-full overflow-hidden">
             <SanityImage
-              className="h-full w-full object-fill aspect-square lg:aspect-auto"
+              className="h-full w-full object-cover lg:aspect-auto aspect-video"
               fetchPriority="high"
-              height={1600}
+              height={1080}
+              sizes="100vw"
               image={image}
               loading="eager"
-              width={1200}
+              width={1920}
             />
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

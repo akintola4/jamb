@@ -1,6 +1,5 @@
 import type {
   PagebuilderType,
-  SanityButtonProps,
   SanityImageProps,
 } from "@/types";
 import { RichText } from "../elements/rich-text";
@@ -59,9 +58,10 @@ export function SubscribeNewsletter({
               <SanityImage
                 loading="eager"
                 fetchPriority="high"
-                width={600}
-                height={400}
-                className=""
+                width={500}
+                height={600}
+                sizes="(max-width: 768px) 100vw, 25vw"
+                className="w-full h-auto"
                 image={image}
               />
             ) : (

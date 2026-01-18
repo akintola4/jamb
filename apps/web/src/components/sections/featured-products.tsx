@@ -94,8 +94,9 @@ export function FeaturedProducts({
                       <SanityImage
                         fetchPriority="high"
                         loading="eager"
-                        width={1000}
-                        height={700}
+                        width={600}
+                        height={aspectRatio === "portrait" ? 750 : 600}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         image={product.image}
                       />

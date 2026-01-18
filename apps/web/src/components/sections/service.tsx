@@ -1,9 +1,9 @@
 import { cn } from "@workspace/ui/lib/utils";
 
 import type {
-  PagebuilderType,
   SanityButtonProps,
   SanityImageProps,
+  SanityRichTextProps,
 } from "@/types";
 import { RichText } from "../elements/rich-text";
 import { SanityButtons } from "../elements/sanity-buttons";
@@ -13,7 +13,7 @@ type ServiceProps = {
   _type: "service";
   _key: string;
   title?: string;
-  subTitle?: any; // Rich text
+  subTitle?: SanityRichTextProps;
   image?: SanityImageProps;
   buttons?: SanityButtonProps[];
   badge?: string;
@@ -77,9 +77,10 @@ export function Service({
               <SanityImage
                 loading="eager"
                 fetchPriority="high"
-                className="object-cover"
-                width={550}
-                height={550}
+                className="object-cover w-full h-auto aspect-4/5"
+                width={800}
+                height={1000}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 image={image}
               />
             ) : (

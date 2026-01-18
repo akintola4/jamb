@@ -521,9 +521,9 @@ export function Navbar({
 
   return (
     <motion.header
-      animate="visible"
+
       className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur-sm"
-      initial="hidden"
+
       variants={{
         hidden: { opacity: 0, y: -20 },
         visible: {
