@@ -529,7 +529,7 @@ export function Navbar({
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 1.2, ease: LUXURY_EASE },
+          transition: { duration: 0.7, ease: LUXURY_EASE },
         },
       }}
     >
@@ -543,7 +543,7 @@ export function Navbar({
                 height={40}
                 image={logo}
                 priority
-                width={120}
+                width={60}
               />
             )}
           </div>

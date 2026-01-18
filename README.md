@@ -31,6 +31,43 @@ A modern, full-stack monorepo template built with Next.js App Router, Sanity CMS
 - Live preview capabilities
 - Asset management
 
+## Tech Test Implementation & Enhancements
+
+This project has been enhanced with a focus on luxury aesthetics, premium performance, and a robust page builder system.
+
+### 🏗️ Advanced Page Builder
+
+- **Dynamic Blocks**: Implemented a flexible Page Builder allowing dynamic content ordering from Sanity.
+- **Visual Editing & Live Preview**: Integrated `VisualEditing` and `sanityFetch` for real-time, click-to-edit capabilities.
+- **Optimistic Updates**: Uses `useOptimistic` for instant feedback in the CMS preview.
+
+### ✨ Luxury Design & UX
+
+- **Typography**: Solved Figma font unavailability by integrating **Galaxie Copernicus** via `next/font/local`.
+- **Premium Scrolling**: Integrated **Lenis** for smooth, buttery scroll interactions.
+- **Fluid Animations**: Implemented high-end micro-animations using `motion/react` with custom luxury easing (`LUXURY_EASE`).
+- **Responsive Navbar**: Custom navbar with optimized animation durations and refined branding.
+
+### 🖼️ Image Optimization & Media
+
+- **Intelligent Ratios**: The "Featured Products" block handles multiple aspect ratios (Square, Portrait, Video, Auto) to accommodate various product types.
+- **Performance Driven**: Leveraging `sanity-image` and `next/image` with:
+  - `fetchPriority="high"` and `loading="eager"` for LCP images (Hero, Service).
+  - Explicit `sizes` to minimize data usage.
+  - Automatic hotspot/crop handling from Sanity.
+
+### 🔍 Search & SEO
+
+- **Robust SEO Engine**: Custom `getSEOMetadata` utility in `lib/seo.ts` for automated title, description, and OG image generation.
+- **Structured Data**: Integrated `JSON-LD` for Organization and Website schemas.
+- **Accessibility**: Semantic HTML5 structure and ARIA-compliant components.
+
+### 🛠️ Technical Decisions
+
+- **Scalability**: Used Tailwind CSS with a standardized design system for visual cohesiveness.
+- **Rich Text Control**: Custom `RichText` component with slug generation for deep-linking and optimized media embeds.
+- **Architecture**: Clean, component-based structure in `apps/web/src/components/sections`.
+
 ## Getting Started
 
 ### Installing the template
