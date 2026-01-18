@@ -68,15 +68,18 @@ To ensure the "premium performance" requirement was met, the application was ben
 
 ### Vercel / Production Test Results
 
-<!-- Replace the placeholder below with your Vercel performance screenshot -->
 
-![Vercel LCP Test Result](https://via.placeholder.com/1200x600?text=Vercel+Performance+Test+Result)
+
+![Vercel LCP Test Result](<img width="1680" height="817" alt="onvercel" src="https://github.com/user-attachments/assets/3a032b52-6a46-4f57-a8e4-8aa745b84388" />
+
+)
 
 ### Local / Lighthouse Test Results
 
-<!-- Replace the placeholder below with your local Lighthouse/Performance screenshot -->
 
-![Local LCP Test Result](https://via.placeholder.com/1200x600?text=Local+Lighthouse+Test+Result)
+
+![Local LCP Test Result](<img width="1680" height="826" alt="localhost" src="https://github.com/user-attachments/assets/08780721-ccef-4756-9ede-a44de753b508" />
+)
 
 ### 🛠️ Technical Decisions
 
