@@ -70,16 +70,13 @@ To ensure the "premium performance" requirement was met, the application was ben
 
 
 
-![Vercel LCP Test Result](<img width="1680" height="817" alt="onvercel" src="https://github.com/user-attachments/assets/3a032b52-6a46-4f57-a8e4-8aa745b84388" />
-
-)
+<img width="1680" height="817" alt="onvercel" src="https://github.com/user-attachments/assets/3a032b52-6a46-4f57-a8e4-8aa745b84388" />
 
 ### Local / Lighthouse Test Results
 
 
 
-![Local LCP Test Result](<img width="1680" height="826" alt="localhost" src="https://github.com/user-attachments/assets/08780721-ccef-4756-9ede-a44de753b508" />
-)
+<img width="1680" height="826" alt="localhost" src="https://github.com/user-attachments/assets/03845991-f046-41f5-9ea5-c447beff7408" />
 
 ### 🛠️ Technical Decisions
 
